@@ -4,11 +4,12 @@
 void charRot(char enT[],int length);
 
 int main(void){
-    char S[101],T[101];
-    scanf("%s %s",S, T);
+    char S[101]="tokyo",T[101]="kyoto";
+    //scanf("%s %s",S, T);
     //Tの文字列長さ取得
-    int Tlength;
-    for(Tlength=0;T[Tlength]!='\0';Tlength++);
+    int Tlength = -1;
+    while(T[++Tlength] != '\0');
+    //for(Tlength=0;T[Tlength]!='\0';Tlength++);
     //処理
     int i, flag=0;
     char* pt = T;
