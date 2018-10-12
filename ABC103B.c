@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <string.h>
-#include <stdlib.h>
 //ポインタで元のTを操作する
 void charRot(char enT[],int length);
 
@@ -13,21 +12,20 @@ int main(void){
     //処理
     int i, flag=0;
     char* pt = T;
-    for(i=0; i<Tlength; i++){
+    for(i=0; i<Tlength; i++){//一致したらフラグ立ててbreak
         if(strcmp(S,T)==0) flag++;
         charRot(pt, Tlength);
         if(flag) break;
     }
-    if(flag) printf("Yes");
-    else printf("No");
+    if(flag) printf("Yes\n");
+    else printf("No\n");
     return 0;
 }
 //最初の文字を一番後ろに移動させる関数
 void charRot(char enT[], int length){
     char temp = enT[0];
     int i;
-    for(i = 0; i < length; i++) enT[i] = enT[i+1];
-    enT[length-2] = temp;
-    enT[length-1] = '\0';
+    for(i = 0; i < length-2; i++) enT[i] = enT[i+1];
+    enT[length-1] = temp;
     return;
 }
