@@ -4,8 +4,8 @@
 void charRot(char enT[],int length);
 
 int main(void){
-    char S[101]="tokyo",T[101]="kyoto";
-    //scanf("%s %s",S, T);
+    char S[101],T[101];
+    scanf("%s %s",S, T);
     //Tの文字列長さ取得
     int Tlength = -1;
     while(T[++Tlength] != '\0');
@@ -22,11 +22,11 @@ int main(void){
     else printf("No\n");
     return 0;
 }
-//最初の文字を一番後ろに移動させる関数
+//後ろの文字を一番前に移動させる関数
 void charRot(char enT[], int length){
-    char temp = enT[0];
+    char temp = enT[length-1];
     int i;
-    for(i = 0; i < length-2; i++) enT[i] = enT[i+1];
-    enT[length-1] = temp;
+    for(i = length-1; i > 0; i--) enT[i] = enT[i-1];
+    enT[0] = temp;
     return;
 }
