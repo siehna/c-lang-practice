@@ -13,7 +13,7 @@ int main(){
         scanf("%d",&x);
         if(minY>y) minY = y;
     }
-    if(maxX < minY) printf("War");
-    else printf("No War");
+    if(maxX < minY) printf("War\n");
+    else printf("No War\n");
     return 0;
 }
