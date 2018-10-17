@@ -9,7 +9,7 @@ int main(){
     scanf("%s %s", A, B);
 
     //配列の長さを取得
-    //while(A[length++] != '\0'); 初期値 length = -1
+    //while(A[length++] != '\0'); 初期値 length = -1 こちらの方が良いかも
     length = sizeof(A) / sizeof(A[0]);
 
     if(compare(A,B,length)) printf("No");
@@ -21,27 +21,20 @@ int main(){
 //判定関数
 int compare(char *A, char *B, int length){
     //a~zまでの探索と全ての配列要素の探索
-    for(int alpha = 97;alpha < 123 ; alpha++){
-        int charDiffA = 100;
-        int charDiffB = 100;
-        int checkA = 100;
-        int checkB = 100;
-        for(int i=-1; i<length; i++){
-            if(alpha==A[i]){
-                //異なる差を持つ配列の組が存在したら検出する
-                charDiffA = abs(A[i] - B[i]);
-                if(charDiffA<100 && checkA !=100 && checkA != charDiffA){
-                    return 1;
-                }
-                checkA = charDiffA;
+    int pair;
+    int temp;
+    for(int alphabet = 'a';alphabet < 'z'+ 1 ; alphabet++){
+        for(int i=0; i<length; i++){
+            if(alphabet==A[i]) pair = B[i];
+        }
+        for(int i=0; i<length; i++){
+            if(alphabet==A[i]){
+                temp = B[i];
+                if(temp != pair) return 1;
             }
-            if(alpha==B[i]){
-                //異なる差を持つ配列の組が存在したら検出する
-                charDiffB = abs(A[i] - B[i]);
-                if(charDiffB<100 && checkB !=100 && checkB != charDiffB){
-                    return 1;
-                }
-                checkB = charDiffB;
+            if(alphabet==B[i]){
+                temp = B[i];
+                if(temp != pair) return 1;
             }
         }
     }
