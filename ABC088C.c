@@ -6,6 +6,7 @@ int main(){
     scanf("%d %d %d",&d,&e,&f);
     scanf("%d %d %d",&g,&h,&i);
     //斜めに足したものが等しければよい
+    //x,y,zはそれぞれa1+a2+a3+b1+b2+b3となる
     int x = a+e+i;
     int y = b+f+g;
     int z = c+d+h;

@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int main(){
-    int flag=0;
+    int flag=1;
     int num;
     scanf("%d", &num);
     //入力値読み込み(2次元配列)
@@ -13,10 +13,10 @@ int main(){
         }
     }
     //判別処理
-    if(duplication()==1||shiritori(num,house[i][j])==1) flag = 1;
+    if(duplication()==1||shiritori(num,house[i][j])==1) flag--;
     //出力
-    if(flag) printf("No");
-    else printf("Yes");
+    if(flag) printf("Yes\n");
+    else printf("No\n");
     return 0;
 }
 
