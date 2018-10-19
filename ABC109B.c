@@ -8,7 +8,7 @@ int main(){
     char house[100][10];
     int i,j;
     for(i=0;i<num;i++){
-        for(j; j<10; j++){
+        for(j=0; j<10; j++){
             scanf("%s",house[i][j]);
         }
     }
@@ -21,12 +21,12 @@ int main(){
 }
 
 //ここが分からない！
-//重複判定処理関数 重複があったら1を返す
+/*/重複判定処理関数 重複があったら1を返す
 int duplication(){
     int pip = 0;
     if(pip) return 1;
     else return 0;
-}
+}*/
 
 //しりとり判定関数 しりとりが成立していなければ1を返す
 int shiritori(int num,char words[][9]){

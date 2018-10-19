@@ -1,3 +1,7 @@
+/*
+作成日：2018/10/18
+作成者：木村友亮
+*/
 #include<stdio.h>
 #include<string.h>
 
